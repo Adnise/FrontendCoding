@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Demo HR</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="scripts/app.js"></script>
+</head>
+<body>
+<h1>HR Employees List Page</h1>
+<div class="panel panel-default">
+    <div class="panel-heading description">
+        Employees list
+    </div>
+    <div class="panel-body">
+        <div>
+            <p>
+                <button onclick="showList()">Show List</button>
+                <button onclick="calculateSum()">Salary total</button>
+                <button onclick="deleteEmployee()">Delete last employee</button>
+            </p>
+            <p>
+                Sort by: <input type="text" id= "sortNumber" />
+                <button onclick="sortBy()">Sort</button>
+            </p>
+        </div>
+        <div id="listcontainer">
+
+        </div>
+    </div>
+</div>
+<div>
+    <a href="index.html">Back to Home Page</a>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading description">
+        Add employee
+    </div>
+    <div class="panel-body">
+        <p>
+            First Name: <input type="text" id="firstName"/>
+        </p>
+        <p>
+            Last Name: <input type="text" id="lastName"/>
+        </p>
+        <p>
+            Phone: <input type="text" id="phone"/>
+        </p>
+        <p>
+            Salary: <input type="number" id="salary"/>
+        </p>
+        <p>
+            <button onclick="addEmployee(),showList()">Add employee</button>
+        </p>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+}
