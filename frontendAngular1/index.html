@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HR ARP</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+</head>
+<body>
+<h1>Sample Application</h1>
+<div ng-app="hrApp">
+    <div ng-controller="MainController">
+        <p>Enter your Name: <input type="text" ng-model="name"></p>
+        <p>Hello <span ng-bind="name"></span>!</p>
+    </div>
+    <div ng-include="'views/second.html'"></div>
+    <div ng-include="'views/scopes.html'"></div>
+</div>
+    <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/MainController.js"></script>
+    <script type="text/javascript" src="scripts/DescriptionController.js"></script>
+    <script type="text/javascript" src="scripts/ScopesController.js"></script>
+    <script type="text/javascript" src="scripts/MenuController.js"></script>
+</body>
+</html>

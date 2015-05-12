@@ -1,0 +1,14 @@
+<div ng-controller="DescriptionController" class="container">
+    <div class="jumbotron" ng-show="descriptionShow">
+        <h1>{{title}}</h1>
+        <p class="lead">
+            A simple demo application.
+        </p>
+        <p class="lead">
+            In this application we will use AngularJS framework.
+        </p>
+    </div>
+    <p>
+        <a class="btn btn-primary btn-lg" role="button" ng-click="toggleDescriptionShow()">Show/Hide Description</a>
+    </p>
+</div>
