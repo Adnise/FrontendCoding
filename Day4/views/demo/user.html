@@ -1,0 +1,45 @@
+<div>
+
+    <div class="row">
+        <div class="span2">Firstname:</div>
+        <div class="span3"><input type="text" ng-model="user.firstName"></div>
+    </div>
+    <div class="row">
+        <div class="span2">Lastname:</div>
+        <div class="span3"><input type="text" ng-model="user.lastName"></div>
+    </div>
+    <div class="row">
+        <div class="span2">CNP:</div>
+        <div class="span3"><input type="text" ng-model="user.cnp"></div>
+    </div>
+    <div class="row">
+        <div class="span2">Age:</div>
+        <div class="span3"><input type="number" ng-model="user.age"></div>
+    </div>
+    <div class="row">
+        <div class="span2">Sex:</div>
+        <div class="span3"><input type="text" ng-model="user.sex"></div>
+    </div>
+
+    </br>
+
+    <div class="row">
+        <a class="btn btn-primary btn-lg" role="button" ng-click="backBtn()">Back</a>
+        <a class="btn btn-primary btn-lg" role="button" ng-click="resetBtn()">Reset</a>
+        <a class="btn btn-primary btn-lg" role="button" ng-click="saveBtn()">Save</a>
+        <a class="btn btn-primary btn-lg" role="button" ng-click="showListBtn()">Show/Hide User List</a>
+    </div>
+
+    </br>
+
+    <div ng-if="showList && userList.length>0">
+        <h3>Saved users</h3>
+        <div ng-repeat="u in userList">
+            <div class="row">
+                <span class="col-md-3">{{$index+1}}.</span> <span class="col-md-3">{{u.firstName}}</span> <span class="col-md-3">{{u.lastName}}</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>

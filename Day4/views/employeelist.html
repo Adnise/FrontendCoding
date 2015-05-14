@@ -1,0 +1,57 @@
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Hire Date</th>
+        <th>Job</th>
+        <th>Salary</th>
+        <th>Commission</th>
+        <th class="col-lg-2 text-center">Manager</th>
+        <th>Department</th>
+        <!--TODO add Actions column-->
+        <th class="col-lg-3 text-center">Actions</th>
+    </tr>
+    <tr ng-repeat="employee in employees">
+        <td class="text-center">
+            {{employee.employeeId}}
+        </td>
+        <td class="text-center">
+            {{employee.firstName}}
+        </td>
+        <td class="text-center">
+            {{employee.lastName}}
+        </td>
+        <td class="text-center">
+            {{employee.email}}
+        </td>
+        <td class="text-center">
+            {{employee.phoneNumber}}
+        </td>
+        <td class="text-center">
+            {{employee.hireDate | date : 'dd-MM-yyyy'}}
+        </td>
+        <td class="text-center">
+            {{employee.jobId.jobTitle}}
+        </td>
+        <td class="text-center">
+            {{employee.salary}}
+        </td>
+        <td class="text-center">
+            {{employee.commissionPct}}
+        </td>
+        <td class="text-center">
+            {{employee.managerId.firstName}} {{employee.managerId.lastName}}
+        </td>
+        <td class="text-center">
+            {{employee.departmentId.departmentName}}
+        </td>
+        <!--TODO add View button-->
+        <td class="text-center">
+            <button type="button" class="btn btn-link" ng-click="viewEmployee(employee.employeeId)">View</button>
+            <!--TODO#HR6-->
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>HR APP</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+</head>
+<body>
+<div ng-app="hrApp">
+    <div ng-include="'views/menu.html'"></div>
+
+    <!--TODO add ng-view-->
+    <div class="container" ng-view></div>
+
+</div>
+<!--<h1>HR Application</h1>-->
+<script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/controllers/MenuController.js"></script>
+
+<!--TODO include angular-route.js-->
+<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="scripts/controllers/MainController.js"></script>
+<script type="text/javascript" src="scripts/controllers/EmployeeListController.js"></script>
+<script type="text/javascript" src="scripts/controllers/EmployeeAddController.js"></script>
+<script type="text/javascript" src="scripts/controllers/EmployeeViewController.js"></script>
+<script type="text/javascript" src="scripts/services/MenuServices.js"></script>
+<script type="text/javascript" src="scripts/services/CommonResourcesFactory.js"></script>
+<script type="text/javascript" src="scripts/services/EmployeeService.js"></script>
+
+<script type="text/javascript" src="scripts/controllers/demo/MathController.js"></script>
+<script type="text/javascript" src="scripts/services/demo/MathService.js"></script>
+<script type="text/javascript" src="scripts/controllers/demo/UserController.js"></script>
+<script type="text/javascript" src="scripts/services/demo/UserService.js"></script>
+<script type="text/javascript" src="scripts/controllers/EmployeeEditController.js"></script>
+<script type="text/javascript" src="scripts/controllers/demo/Colors.js"></script>
+<script type="text/javascript" src="scripts/controllers/demo/Form.js"></script>
+
+<!--TODO end-->
+
+</body>
+</html>
