@@ -1,0 +1,87 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">View employee  <b>{{employee.firstName}} {{employee.lastName}}</b></h2>
+    </div>
+    <div class="panel-body">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <span id="firstName" class="form-control">{{employee.firstName}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <span id="lastName" class="form-control">{{employee.lastName}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <span id="email" class="form-control">{{employee.email}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number:</label>
+                        <span id="phoneNumber" class="form-control">{{employee.lastName}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="hireDate">Hire Date:</label>
+                        <span id="hireDate" class="form-control">{{employee.hireDate | date : format : timezone}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="jobId">Job Title:</label>
+                        <span id="jobId" class="form-control">{{employee.jobId.jobTitle}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="salary">Salary:</label>
+                        <span id="salary" class="form-control">{{employee.salary}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="commissionPct">Commission:</label>
+                        <span id="commissionPct" class="form-control">{{employee.commissionPct}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="departmentId">Department:</label>
+                        <span id="departmentId" class="form-control">{{employee.departmentId.departmentName}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="manager">Manager:</label>
+                        <span id="manager" class="form-control">{{employee.managerId.lastName}} {{employee.managerId.firstName}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="container">
+                        <button class="btn btn-default" ng-click="back()">Back</button>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>
