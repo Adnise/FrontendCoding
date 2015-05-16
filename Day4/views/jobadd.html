@@ -7,25 +7,29 @@
             <div class="col-lg-6">
                 <div class="form-group" ng-class="{'has-error' : jobAddForm.jobId.$invalid }">
                     <label for="jobId">Job ID:</label>
-                    <input id="jobId" name="jobId" type="text" class="form-control" placeholder="Job ID"/>
+                    <input id="jobId" name="jobId" type="text" class="form-control" placeholder="Job ID" required/>
+                    <span class="help-block" ng-show="jobAddForm.jobId.$error.required && jobAddForm.jobId.$dirty">{{requiredErrorMessage}}</span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <label>Job Title: </label>
                 <div class="form-group" ng-class="{ 'has-error': jobAddForm.jobTitle.$invalid }">
-                    <input type="text" ng-model="job.jobTitle" required class="form-control" placeholder="Job Title"/>
+                    <input type="text" ng-model="job.jobTitle" class="form-control" placeholder="Job Title" required/>
+                    <span class="help-block" ng-show="jobAddForm.jobTitle.$error.required && jobAddForm.jobTitle.$dirty">{{requiredErrorMessage}}</span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <label>Max Salary:</label>
                 <div class="form-group" ng-class="{ 'has-error': jobAddForm.maxSalary.$invalid }">
-                    <input type="number" ng-model="job.maxSalary" required class="form-control" placeholder="Max Salary"/>
+                    <input type="number" ng-model="job.maxSalary"  class="form-control" placeholder="Max Salary" required/>
+                    <span class="help-block" ng-show=" jobAddForm.maxSalary.$error.required &&  jobAddForm.maxSalary.$dirty">{{requiredErrorMessage}}</span>
                 </div>
             </div>
             <div class="col-lg-6">
                 <label>Min Salary:</label>
                 <div class="form-group" ng-class="{ 'has-error': jobAddForm.minSalary.$invalid }">
-                    <input type="number" ng-model="job.minSalary" required class="form-control" placeholder="Min Salary"/>
+                    <input type="number" ng-model="job.minSalary" class="form-control" placeholder="Min Salary" required/>
+                    <span class="help-block" ng-show="jobAddForm.minSalary.$error.required && jobAddForm.minSalary.$dirty">{{requiredErrorMessage}}</span>
                 </div>
             </div>
             <div class="row">

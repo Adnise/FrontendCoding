@@ -11,11 +11,6 @@ hrApp.controller('EmployeeAddController', ['$scope', '$http', '$location', 'comm
                 $scope.managers = data;
             });
 
-        $http({url: $commonResourcesFactory.findAllDepartmentsUrl , method: 'GET'}).
-            success(function (data, status, headers, config) {
-                $scope.departments = data;
-            });
-
         $http({url: $commonResourcesFactory.findAllJobsUrl  , method: 'GET'}).
             success(function (data, status, headers, config) {
                 $scope.jobs = data;

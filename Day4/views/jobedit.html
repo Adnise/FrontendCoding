@@ -4,24 +4,35 @@
     </div>
     <div class="panel-body">
         <ng-form name="jobEditForm">
+
+            <div class="col-lg-6">
+                <label for="jobId">Job ID:</label>
+                <div class="form-group" ng-class="{'has-error' : jobEditForm.jobId.$invalid && jobEditForm.jobId.$dirty}">
+                    <input type="text" id="jobId" name="jobId"  class="form-control" placeholder="Job ID" ng-model="job.jobId" required>
+                </div>
+            </div>
+
             <div class="col-lg-6">
                 <label>Job Title: </label>
-                <div class="form-group" ng-class="{ 'has-error': jobEditForm.jobTitle.$invalid }">
-                    <input type="text" ng-model="job.jobTitle" required class="form-control"/>
+                <div class="form-group" ng-class="{ 'has-error': jobEditForm.jobTitle.$invalid && jobEditForm.jobTitle.$dirty }">
+                    <input type="text" id="jobTile" name="jobTitle" ng-model="job.jobTitle" class="form-control" required/>
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <label>Max Salary:</label>
-                <div class="form-group" ng-class="{ 'has-error': jobEditForm.maxSalary.$invalid }">
-                    <input type="number" ng-model="job.maxSalary" required class="form-control"/>
+                <div class="form-group" ng-class="{ 'has-error': jobEditForm.maxSalary.$invalid && jobEditForm.maxSalary.$dirty }">
+                    <input type="number" id="maxSalary" name="maxSalary" ng-model="job.maxSalary" class="form-control" required/>
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <label>Min Salary:</label>
-                <div class="form-group" ng-class="{ 'has-error': jobEditForm.minSalary.$invalid }">
-                    <input type="number" ng-model="job.minSalary" required class="form-control"/>
+                <div class="form-group" ng-class="{ 'has-error': jobEditForm.minSalary.$invalid && jobEditForm.minSalary.$dirty}">
+                    <input type="number" id="minSalary" name="minSalary" ng-model="job.minSalary"  class="form-control" required/>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-5"></div>
                 <div class="col-md-7">
@@ -31,6 +42,7 @@
                     </div>
                 </div>
             </div>
+
         </ng-form>
     </div>
 </div>
