@@ -1,7 +1,7 @@
 hrApp.controller('JobAddController', ['$scope', '$http', '$location', 'commonResourcesFactory',
     function ($scope, $http, $location, commonResourcesFactory) {
         $scope.job = {};
-        $scope.requiredErrorMessage = "Please fill out this form!";
+        $scope.requiredErrorMessage = "Error, Please fill the form!";
         $scope.reset = function () {
             this.job = {};
         };
