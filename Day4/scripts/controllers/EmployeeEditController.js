@@ -5,6 +5,24 @@ hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '
     $scope.patternCommisionNotRespectedMessage = "Commission should be in the format 0.XX";
 
         //TODO#HR5
+        $http({url: commonResourcesFactory.findAllEmployeesUrl, method: 'GET'}).
+            success(function (data, status, headers, config) {
+                $scope.employees = data;
+            });
+        $http({url: commonResourcesFactory.findAllDepartmentsUrl , method: 'GET'}).
+            success(function (data, status, headers, config) {
+                $scope.departments = data;
+            });
+
+        $http({url: commonResourcesFactory.findAllJobsUrl  , method: 'GET'}).
+            success(function (data, status, headers, config) {
+                $scope.jobs = data;
+            });
+
+        $http({url: commonResourcesFactory.findOneEmployeeUrl+$routeParams.employeeid  , method: 'GET'}).
+            success(function (data, status, headers, config) {
+                $scope.employee = data;
+            });
 
     /**
      * Reset form

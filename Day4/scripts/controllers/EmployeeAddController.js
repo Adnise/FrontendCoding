@@ -6,7 +6,6 @@ hrApp.controller('EmployeeAddController', ['$scope', '$http', '$location', 'comm
     $scope.patternCommisionNotRespectedMessage = "Commission should be in the format 0.XX";
 
     //TODO#HR1
-
         $http({url: $commonResourcesFactory.findAllEmployeesUrl, method: 'GET'}).
             success(function (data, status, headers, config) {
                 $scope.managers = data;
@@ -20,6 +19,11 @@ hrApp.controller('EmployeeAddController', ['$scope', '$http', '$location', 'comm
         $http({url: $commonResourcesFactory.findAllJobsUrl  , method: 'GET'}).
             success(function (data, status, headers, config) {
                 $scope.jobs = data;
+            });
+
+        $http({url: $commonResourcesFactory.findAllDepartmentsUrl  , method: 'GET'}).
+            success(function (data, status, headers, config) {
+                $scope.departments = data;
             });
 
         /**

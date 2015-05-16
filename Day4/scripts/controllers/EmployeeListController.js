@@ -46,20 +46,23 @@ hrApp.controller('EmployeeListController', ['$scope', '$http', '$location', 'com
          ];
 
         //TODO Load employee list from server
-        $http({url: commonResourcesFactory.findAllEmployeesUrl, method: 'GET'}).
+           $http({url: commonResourcesFactory.findAllEmployeesUrl, method: 'GET'}).
          success(function (data, status, headers, config) {
          $scope.employees = data;
          });
 
 
         // TODO add viewEmployee function using $location
-        $scope.viewEmployee = function (employeeId) {
-            $location.url('/employeeview/' + employeeId);
+             $scope.viewEmployee = function (employeeId) {
+             $location.url('/employeeview/' + employeeId);
         };
+             $scope.editEmployee = function(employeeId) {
+             $location.url('/employeeedit/'+employeeId);
+         };
 
-     $scope.editEmployee = function(employeeId) {
-      $location.url('/employeeedit/'+employeeId);
-     };
-
+        $scope.deleteEmployee = function (EmployeeId) {
+            $http({url: commonResourcesFactory.deleteEmployeeUrl + EmployeeId, method: 'DELETE'});
+            $location.url('/employeeslist/');
+        }
 
     }]);

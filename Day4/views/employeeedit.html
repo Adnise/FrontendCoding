@@ -5,6 +5,110 @@
     <div class="panel-body">
         <ng-form name="employeeEditForm">
             <!--TODO#HR7-->
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>First Name: </label>
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.firstName.$invalid }">
+                        <input type="text" ng-model="employee.firstName" required class="form-control"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label>Last Name:</label>
+
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.lastName.$invalid }">
+                        <input type="text" ng-model="employee.lastName" required class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Email:</label>
+
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.email.$invalid }">
+                        <input type="text" ng-model="employee.email" required class="form-control"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label>Phone Number:</label>
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.phoneNumber.$invalid }">
+                        <input type="text" ng-model="employee.phoneNumber" required class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group"
+                         ng-class="{ 'has-error': employeeEditForm.hireDate.$invalid && employeeEditForm.hireDate.$dirty }">
+                        <label for="hireDate">Hire Date:</label>
+                        <input type="text" id="hireDate" name="hireDate" class="form-control"
+                               ng-model="employee.hireDate"
+                               placeholder="Hire Date" ng-pattern="datePattern" required>
+                        <span class="help-block"
+                              ng-show="employeeEditForm.hireDate.$error.required && employeeEditForm.hireDate.$dirty">{{requiredErrorMessage}}</span>
+                        <span class="help-block"
+                              ng-show="employeeEditForm.hireDate.$error.pattern && employeeEditForm.hireDate.$dirty">{{patternDateNotRespectedMessage}}</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label>Job Title:</label>
+
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.jobTitle.$invalid }">
+                        <select id="jobTitle" ng-model="employee.jobId" name="jobTitle" class="form-control" required
+                                ng-options="job.jobTitle for job in jobs track by job.jobId">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Salary:</label>
+
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.salary.$invalid }">
+                        <input type="text" ng-model="employee.salary" required class="form-control"/>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group"
+                         ng-class="{ 'has-error': employeeEditForm.commissionPct.$invalid && employeeEditForm.commissionPct.$dirty }">
+                        <label for="commissionPct">Commission:</label>
+                        <input type="text" id="commissionPct" name="commissionPct" class="form-control"
+                               ng-model="employee.commissionPct"
+                               placeholder="Commission" ng-pattern="commissionPattern" required>
+                        <span class="help-block" ng-show="employeeEditForm.commissionPct.$error.required  && employeeEditForm.commissionPct.$dirty">{{requiredErrorMessage}}</span>
+                        <span class="help-block" ng-show="employeeEditForm.commissionPct.$error.pattern && employeeEditForm.commissionPct.$dirty">{{patternCommisionNotRespectedMessage}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Department:</label>
+
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.department.$invalid }">
+                        <select id="department" ng-model="employee.departmentId" name="department" class="form-control"
+                                required
+                                ng-options="department.departmentName for department in departments track by department.departmentId">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group" ng-class="{ 'has-error': employeeEditForm.manager.$invalid }">
+                        <label for="manager">Manager:</label>
+                        <select id="manager" ng-model="employee.managerId" name="manager" class="form-control" required
+                                ng-options="manager.firstName+' '+ manager.lastName for manager in managers track by manager.employeeId">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="container">
+
+                        <button class="btn btn-default" ng-click="reset()">Reset</button>
+                        <button class="btn btn-default" ng-click="create(employee) ">Save</button>
+                    </div>
+                </div>
+            </div>
         </ng-form>
     </div>
 </div>
