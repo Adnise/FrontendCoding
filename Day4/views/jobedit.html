@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Add new job</h2>
+    </div>
+    <div class="panel-body">
+        <ng-form name="jobEditForm">
+            <div class="col-lg-6">
+                <label>Job Title: </label>
+                <div class="form-group" ng-class="{ 'has-error': jobEditForm.jobTitle.$invalid }">
+                    <input type="text" ng-model="job.jobTitle" required class="form-control"/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label>Max Salary:</label>
+                <div class="form-group" ng-class="{ 'has-error': jobEditForm.maxSalary.$invalid }">
+                    <input type="number" ng-model="job.maxSalary" required class="form-control"/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label>Min Salary:</label>
+                <div class="form-group" ng-class="{ 'has-error': jobEditForm.minSalary.$invalid }">
+                    <input type="number" ng-model="job.minSalary" required class="form-control"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="container">
+                        <button class="btn btn-default" ng-click="reset()">Reset</button>
+                        <button class="btn btn-default" ng-click="create(job)">Save</button>
+                    </div>
+                </div>
+            </div>
+        </ng-form>
+    </div>
+</div>

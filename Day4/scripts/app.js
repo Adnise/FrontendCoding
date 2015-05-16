@@ -6,7 +6,6 @@ var hrApp = angular.module('hrApp', ['ngRoute']);
 // TODO add route for Employees List page
 // TODO add route for Employee View page
 
-
 hrApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
@@ -40,9 +39,28 @@ hrApp.config(['$routeProvider',
             .when('/employeeadd', {
                 templateUrl: 'views/employeeadd.html',
                 controller: 'EmployeeAddController'
-    })
-
-    .otherwise({
+            })
+            .when('/employeeedit/:employeeId', {
+                templateUrl: 'views/employeeedit.html',
+                controller: 'EmployeeEditController'
+            })
+            .when('/jobslist', {
+                templateUrl: 'views/joblist.html',
+                controller: 'JobListController'
+            })
+            .when('/jobview/:jobid', {
+                templateUrl: 'views/jobview.html',
+                controller: 'JobViewController'
+            })
+            .when('/jobadd', {
+                templateUrl: 'views/jobadd.html',
+                controller: 'JobAddController'
+            })
+            .when('/jobedit/:jobid', {
+                templateUrl: 'views/jobedit.html',
+                controller: 'JobEditController'
+            })
+            .otherwise({
                 templateUrl: 'views/main.html',
                 controller: 'MainController'
             });

@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Add new job</h2>
+    </div>
+    <div class="panel-body">
+        <ng-form name="jobAddForm">
+            <div class="col-lg-6">
+                <div class="form-group" ng-class="{'has-error' : jobAddForm.jobId.$invalid }">
+                    <label for="jobId">Job ID:</label>
+                    <input id="jobId" name="jobId" type="text" class="form-control" placeholder="Job ID"/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label>Job Title: </label>
+                <div class="form-group" ng-class="{ 'has-error': jobAddForm.jobTitle.$invalid }">
+                    <input type="text" ng-model="job.jobTitle" required class="form-control" placeholder="Job Title"/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label>Max Salary:</label>
+                <div class="form-group" ng-class="{ 'has-error': jobAddForm.maxSalary.$invalid }">
+                    <input type="number" ng-model="job.maxSalary" required class="form-control" placeholder="Max Salary"/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <label>Min Salary:</label>
+                <div class="form-group" ng-class="{ 'has-error': jobAddForm.minSalary.$invalid }">
+                    <input type="number" ng-model="job.minSalary" required class="form-control" placeholder="Min Salary"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-7">
+                    <div class="container">
+                        <a class="btn btn-primary btn-lg" role="button" ng-click="create(job)">Save</a>
+                        <a class="btn btn-default btn-lg" role="button" ng-click="reset()">Reset</a>
+                    </div>
+                </div>
+            </div>
+        </ng-form>
+    </div>
+</div>
